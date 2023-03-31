@@ -1,0 +1,38 @@
+#include <stdio.h>
+int reverse(int num) 
+{
+    int rev = 0;
+    while (num > 0) 
+	{
+        rev = (rev * 10) + (num % 10);
+        num /= 10;
+    }
+    return rev;
+}
+int fib(int num) 
+{
+    if (num == 0 || num == 1) 
+	{
+        return num;
+    } else 
+	{
+        return fib(num - 1) + fib(num - 2);
+    }
+}
+int main() 
+{
+    int num, rev;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    rev = reverse(num);
+    printf("The reverse of %d is %d\n", num, rev);
+    printf("The Fibonacci series up to %d is: ", num);
+    for (int i = 0; i <= num; i++) 
+	{
+        printf("%d ", fib(i));
+    }
+    printf("\n");
+
+    return 0;
+}
