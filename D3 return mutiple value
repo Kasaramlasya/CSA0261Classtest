@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void calculate(int num1, int num2, int *sum, int *diff, int *prod, float *quot)
+{
+   
+    *sum = num1 + num2;
+    *diff = num1 - num2;
+    *prod = num1 * num2;
+    *quot = (float)num1 / num2;
+}
+
+int main()
+{
+    int num1 = 10, num2 = 5, sum, diff, prod;
+    float quot;
+
+    calculate(num1, num2, &sum, &diff, &prod, &quot);
+
+    printf("Sum = %d\n", sum);
+    printf("Difference = %d\n", diff);
+    printf("Product = %d\n", prod);
+    printf("Quotient = %f\n", quot);
+
+    return 0;
+}
